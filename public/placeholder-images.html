@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Placeholder Images</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .image-container { display: inline-block; margin: 10px; text-align: center; }
+        canvas { border: 1px solid #ccc; margin: 5px; }
+        .download-btn { 
+            display: block; 
+            margin: 5px auto; 
+            padding: 5px 10px; 
+            background: #007bff; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 3px; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Cosmetic Product Placeholder Images</h1>
+    <p>Right-click on each image and "Save image as" to download them to your public folder.</p>
+    <p>Save them as cosmetic1.jpg, cosmetic2.jpg, etc.</p>
+    
+    <div id="images"></div>
+
+    <script>
+        const products = [
+            'Body Wash', 'Face Cream', 'Shampoo', 'Conditioner',
+            'Moisturizer', 'Serum', 'Sunscreen', 'Eye Cream',
+            'Lip Balm', 'Hand Cream', 'Body Lotion', 'Face Mask',
+            'Toner', 'Cleanser', 'Exfoliator', 'Night Cream'
+        ];
+
+        function generateImage(text, index) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 300;
+            canvas.height = 400;
+            const ctx = canvas.getContext('2d');
+
+            // Background gradient
+            const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+            gradient.addColorStop(0, '#fdf2f8');
+            gradient.addColorStop(1, '#fce7f3');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 300, 400);
+
+            // Product bottle shape
+            ctx.fillStyle = '#ffffff';
+            ctx.strokeStyle = '#e5e7eb';
+            ctx.lineWidth = 2;
+            
+            // Bottle body
+            ctx.beginPath();
+            ctx.roundRect(100, 80, 100, 200, 20);
+            ctx.fill();
+            ctx.stroke();
+
+            // Bottle cap
+            ctx.beginPath();
+            ctx.roundRect(110, 60, 80, 30, 10);
+            ctx.fill();
+            ctx.stroke();
+
+            // BROWN text
+            ctx.fillStyle = '#1f2937';
+            ctx.font = 'bold 16px Arial';
+            ctx.save();
+            ctx.translate(120, 150);
+            ctx.rotate(-Math.PI/2);
+            ctx.fillText('BROWN', 0, 0);
+            ctx.restore();
+
+            // Product name
+            ctx.fillStyle = '#6b7280';
+            ctx.font = '14px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText(text, 150, 320);
+
+            // Price
+            ctx.fillStyle = '#1f2937';
+            ctx.font = 'bold 18px Arial';
+            ctx.fillText('$' + (Math.floor(Math.random() * 50) + 15) + '.99', 150, 350);
+
+            const container = document.createElement('div');
+            container.className = 'image-container';
+            
+            const img = document.createElement('img');
+            img.src = canvas.toDataURL('image/jpeg', 0.8);
+            img.alt = text;
+            
+            const downloadLink = document.createElement('a');
+            downloadLink.href = img.src;
+            downloadLink.download = `cosmetic${index + 1}.jpg`;
+            downloadLink.className = 'download-btn';
+            downloadLink.textContent = 'Download';
+            
+            container.appendChild(img);
+            container.appendChild(downloadLink);
+            
+            return container;
+        }
+
+        // Generate all images
+        products.forEach((product, index) => {
+            document.getElementById('images').appendChild(generateImage(product, index));
+        });
+
+        // Add roundRect polyfill for older browsers
+        if (!CanvasRenderingContext2D.prototype.roundRect) {
+            CanvasRenderingContext2D.prototype.roundRect = function(x, y, width, height, radius) {
+                this.beginPath();
+                this.moveTo(x + radius, y);
+                this.lineTo(x + width - radius, y);
+                this.quadraticCurveTo(x + width, y, x + width, y + radius);
+                this.lineTo(x + width, y + height - radius);
+                this.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+                this.lineTo(x + radius, y + height);
+                this.quadraticCurveTo(x, y + height, x, y + height - radius);
+                this.lineTo(x, y + radius);
+                this.quadraticCurveTo(x, y, x + radius, y);
+                this.closePath();
+            };
+        }
+    </script>
+</body>
+</html>

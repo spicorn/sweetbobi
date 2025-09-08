@@ -1,0 +1,106 @@
+import React from "react";
+import styled from "styled-components";
+
+const EmailCard = () => {
+  return (
+    <StyledWrapper>
+      <div className="book">
+        <div>
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">Email Me</h3>
+
+          <a
+            href="mailto:ctchimukoko@gmail.com"
+            className="ml-7 text-purple-600 font-semibold text-lg hover:text-purple-700 transition-colors"
+          >
+            ctchimukoko@gmail.com
+          </a>
+          <p className="text-sm text-gray-500 mt-2">
+            I respond within <br />
+            2-4 minutes.
+          </p>
+        </div>
+
+        <div className="cover bg-gradient-to-b from-gray-50 to-pink-500/40">
+          <div className="w-16 h-16 bg-pink-500 rounded-full flex items-center  justify-center mx-auto mb-6">
+            <svg
+              className="w-8 h-8 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </StyledWrapper>
+  );
+};
+
+const StyledWrapper = styled.div`
+  .book {
+    position: relative;
+    border-radius: 10px;
+    width: 260px;
+    height: 300px;
+    background-color: transparent;
+    -webkit-box-shadow: 1px 1px 12px #e269dcff;
+    box-shadow: 1px 1px 12px #f36eddff;
+    -webkit-transform: preserve-3d;
+    -ms-transform: preserve-3d;
+    transform: preserve-3d;
+    -webkit-perspective: 2000px;
+    perspective: 2000px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #000;
+  }
+
+  .cover {
+    top: 0;
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform-origin: 0;
+    -ms-transform-origin: 0;
+    transform-origin: 0;
+    -webkit-box-shadow: 1px 1px 12px #e269dcff;
+    box-shadow: 1px 1px 12px #f36eddff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
+  .book:hover .cover {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform: rotatey(-80deg);
+    -ms-transform: rotatey(-80deg);
+    transform: rotatey(-80deg);
+  }
+`;
+
+export default EmailCard;
