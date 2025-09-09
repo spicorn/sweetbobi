@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import pic1 from "../assets/img/pic1.jpg";
+import tarisiro from "../assets/img/tarisiro.jpg"
 
 const About = () => {
   return (
@@ -86,7 +86,7 @@ const About = () => {
               >
                 <span className="text-4xl text-pink-600 font-bold">
                   <img
-                    src={pic1}
+                    src={tarisiro}
                     className=" rounded-full object-cover shadow-lg"
                   />
                 </span>

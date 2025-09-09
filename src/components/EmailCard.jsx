@@ -12,7 +12,7 @@ const EmailCard = () => {
             href="mailto:ctchimukoko@gmail.com"
             className="ml-7 text-purple-600 font-semibold text-lg hover:text-purple-700 transition-colors"
           >
-            ctchimukoko@gmail.com
+            Ctchimukoko@gmail.com
           </a>
           <p className="text-sm text-gray-500 mt-2">
             I respond within <br />

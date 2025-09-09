@@ -6,6 +6,7 @@ import {
   useScroll,
   useMotionValueEvent,
 } from "motion/react";
+import logo from "../assets/img/logo.png";
 
 // Utility function for merging classes
 const cn = (...inputs) => {
@@ -157,7 +158,7 @@ export const MobileNavMenu = ({ children, className, isOpen, onClose }) => {
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.2 }}
           className={cn(
-            "absolute top-full left-0 right-0 z-50 mt-2 w-full flex-col items-start justify-start gap-4 rounded-lg bg-white px-4 py-8 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]",
+            "absolute top-full left-0 right-0 z-50 mt-2 w-full flex-col text-center gap-4 rounded-lg bg-gradient-to-b from-gray-50 to-pink-500/40 px-4 py-8 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]",
             className
           )}
         >
@@ -209,7 +210,7 @@ export const NavbarLogo = () => {
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
       <div className="w-8 h-8 bg-pink-500 rounded-full flex items-center justify-center">
-        <span className="text-white font-bold text-sm">SB</span>
+        <img src={logo} />
       </div>
       <span className="font-medium text-black">SweetBobi</span>
     </a>
