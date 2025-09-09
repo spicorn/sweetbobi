@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import tarisiro from "../assets/img/tarisiro.jpg"
+import tarisiro from "../assets/img/tarisiro.jpg";
 
 const About = () => {
   return (
@@ -70,14 +70,14 @@ const About = () => {
               </div>
             </motion.div>
             <motion.div
-              className="relative"
+              className="relative  "
               initial={{ opacity: 0, x: 24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
               <motion.div
-                className="w-48 h-48 md:w-64 md:h-64 mx-auto bg-gradient-to-br from-pink-200 to-purple-200 rounded-full flex items-center justify-center"
+                className="mt-8 w-48 h-48  md:w-64 md:h-64 mx-auto bg-gradient-to-br from-pink-200 to-purple-200 rounded-full flex items-center justify-center"
                 initial={{ scale: 0.9, rotate: -2, opacity: 0 }}
                 whileInView={{ scale: 1, rotate: 0, opacity: 1 }}
                 viewport={{ once: true, amount: 0.3 }}
@@ -87,7 +87,7 @@ const About = () => {
                 <span className="text-4xl text-pink-600 font-bold">
                   <img
                     src={tarisiro}
-                    className=" rounded-full object-cover shadow-lg"
+                    className="rounded-full object-cover shadow-lg"
                   />
                 </span>
               </motion.div>

@@ -60,7 +60,7 @@ const Footer = () => {
                 <FaInstagram />
               </motion.a>
               <motion.a
-                href="https://www.facebook.com/christelletarisiro.chimukoko"
+                href="https://www.facebook.com/christelletarisirochimukoko"
                 className="text-gray-500 hover:text-pink-500 transition-colors"
                 whileHover={{ y: -2, scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
@@ -82,7 +82,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="#"
+                  href="#home"
                   className="text-gray-600 hover:text-pink-500 transition-colors text-sm"
                 >
                   Home
@@ -90,7 +90,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#products"
                   className="text-gray-600 hover:text-pink-500 transition-colors text-sm"
                 >
                   Products
@@ -98,7 +98,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#about"
                   className="text-gray-600 hover:text-pink-500 transition-colors text-sm"
                 >
                   About Us
@@ -106,18 +106,10 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#contact"
                   className="text-gray-600 hover:text-pink-500 transition-colors text-sm"
                 >
                   Contact
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-600 hover:text-pink-500 transition-colors text-sm"
-                >
-                  Blog
                 </a>
               </li>
             </ul>
